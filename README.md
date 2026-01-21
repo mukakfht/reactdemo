@@ -11,4 +11,3 @@
 
 - Description: lets users expand and collapse sections smoothly
 - Tech: React, Lucid React, Tailwind CSS
--
