@@ -1,0 +1,37 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  background-color: white;
+
+  font-family: Arial, sans-serif;
+}
+.card {
+  width: 300px;
+  height: fit-content;
+  margin: 40px;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: white;
+}
+
+li {
+  margin-bottom: 0.5rem; /* adds space between each holiday */
+}
+
+/*
+
+//make the card centered in the page both vertically and horizontally
+//use flexbox for centering
+//add some padding and margin to the card
+//add a box shadow to the card
+//make the card width 300px and height 200px
+//set the background color of the card to white
+//set the background color of the page to light gray
+//set the font family to Arial, sans-serif
+*/
