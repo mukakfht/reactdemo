@@ -1,5 +1,4 @@
-import { useState, useRef } from "react";
-//import faq from "../output/faqs.tsx";
+import { useState } from "react";
 
 import { Minus, Plus } from "lucide-react";
 
@@ -25,15 +24,8 @@ interface FaqItem {
   content: string;
 }
 
-// 3. 组件定义 {faqs} const faqs = props.faqs;
 const FaqAccordion = ({ faqs }: { faqs: FaqItem[] }) => {
   const [openItems, setOpenItems] = useState<number | null>(null);
-
-  // open items is an array of indexes of open faq items
-
-  /*const toggleItem = (index: number) => {
-    openItems == index ? setOpenItems(null) : setOpenItems(index);
-  };*/
 
   return (
     <ul>
@@ -66,9 +58,6 @@ const AccordionItem = ({
   const isOpen = openItems === index;
   const Icon = isOpen ? Minus : Plus;
 
-  const contentRef = useRef<HTMLDivElement>(null);
-  // change height based on content, useRef()
-  // remove   {isOpen && <p className="pb-10 py-5 px-10">{faq.content}</p>}
   return (
     <li
       className="border-b"
@@ -81,14 +70,9 @@ const AccordionItem = ({
         <Icon size={20} />
       </button>
       <div
-        className="overflow-hidden transition-all duration-300 ease-in-out"
-        style={{
-          height: isOpen ? contentRef.current?.scrollHeight : 0,
-        }}
+        className={`${isOpen ? "max-h-96" : "max-h-0"} overflow-hidden transition-all duration-300 ease-in-out`}
       >
-        <div className=" pb-10 text-grey-600" ref={contentRef}>
-          {faq.content}
-        </div>
+        <div className=" pb-10 text-grey-600">{faq.content}</div>
       </div>
     </li>
   );
